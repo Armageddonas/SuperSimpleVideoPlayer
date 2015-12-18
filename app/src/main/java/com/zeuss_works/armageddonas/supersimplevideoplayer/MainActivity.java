@@ -20,9 +20,9 @@ import android.widget.VideoView;
 
 public class MainActivity extends AppCompatActivity {
 
+    static final int REQUEST_VIDEO_CAPTURE = 1;
     Intent takeVideoIntent;
     VideoView mVideoView;
-    static final int REQUEST_VIDEO_CAPTURE = 1;
     boolean playing = false;
     DisplayMetrics dm;
 
@@ -30,6 +30,7 @@ public class MainActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+        //Test 1 commit
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
@@ -57,7 +58,6 @@ public class MainActivity extends AppCompatActivity {
         btnPlay.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                //Log.v("videoview", "Runs");
                 mVideoView.start();
                 if (takeVideoIntent == null) {
                     Toast.makeText(MainActivity.this, "Please record a video first",
